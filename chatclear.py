@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-TOKEN = "NDg0NzU4MjY5MTY5MTA2OTY0.Dmmqrw.zXqyRWzfNZw1--eb0YY0-G8thH0"
+TOKEN = ""
 client = commands.Bot(command_prefix=".")
 
 
@@ -18,4 +18,4 @@ async def clear(ctx, amount=100):
     await client.delete_messages(messages)
     await client.say("DELETED")
 
-client.run(TOKEN)
+client.run("NTI1OTMzNjE0NjQzMjgxOTMx.Dv91aA.xtpbWF1-fA8xRTiy7GVe7de4w9E")
