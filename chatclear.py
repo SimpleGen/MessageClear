@@ -1,21 +1,37 @@
 import discord
+from discord.ext.commands import Bot
 from discord.ext import commands
+import asyncio
+import time
+import random
+from discord import Game
 
-TOKEN = ""
-client = commands.Bot(command_prefix=".")
 
+prefix = "-"
+bot = commands.Bot(command_prefix=prefix)
 
-@client.event
+@bot.event
 async def on_ready():
-    print("bot online.")
+    print("Höher gewinnt")
 
-@client.command(pass_context=True)
+@bot.event
+async def on_member_join(member):
+    role = discord.utils.get(member.server.roles, name="Member")
+    await bot.add_roles(member, role)
+
+@bot.command(pass_context=True)
+async def start(ctx):
+    await bot.say(random.randint(0, 10000))
+
+@bot.command(pass_context=True)
 async def clear(ctx, amount=100):
     channel = ctx.message.channel
     messages = []
-    async for message in client.logs_from(channel, limit=int(amount) + 1):
+    async for message in bot.logs_from(channel, limit=int(amount) + 1):
         messages.append(message)
-    await client.delete_messages(messages)
-    await client.say("DELETED")
+    await bot.delete_messages(messages)
+    await bot.say("**DELETED**")
 
-client.run("NTI1OTMzNjE0NjQzMjgxOTMx.Dv91aA.xtpbWF1-fA8xRTiy7GVe7de4w9E")
+bot.run("NTM2MTQwNDIwNDI2NDk4MDc1.DySXNw.aTZWvdkLPmIUSEgdn2qOO91iYdo")
+
+
