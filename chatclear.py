@@ -20,6 +20,6 @@ async def on_member_join(member):
     await bot.add_roles(member, role)
     
 
-bot.run("NTM2MTQwNDIwNDI2NDk4MDc1.DySXNw.aTZWvdkLPmIUSEgdn2qOO91iYdo")
+bot.run("NTQxMDE1NzA0OTg0NjE3MDEx.DzZUTA.pTnYdTKkRPxs78clH8s52W81y54")
 
 
